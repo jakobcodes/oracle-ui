@@ -1,7 +1,7 @@
-import {Observation} from "./Observation";
+import {FetchActionRequestBody} from "./FetchActionRequestBody";
 
 export type OracleResponse = {
     status: string;
-    input: Observation;
+    input: FetchActionRequestBody;
     action: number;
 };
