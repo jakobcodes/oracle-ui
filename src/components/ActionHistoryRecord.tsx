@@ -10,6 +10,7 @@ interface ActionHistoryRecordProps {
 const ActionsHistoryRecord: React.FC<ActionHistoryRecordProps> = (props) => {
 
     const mapToObservations = (obs: number[]): Observation => {
+        console.log(obs)
         if (obs.length !== 7) {
             throw new Error("obs array must have exactly 7 elements");
         }
@@ -25,12 +26,13 @@ const ActionsHistoryRecord: React.FC<ActionHistoryRecordProps> = (props) => {
         }
     };
 
-    const [observations, setObservations] = useState<Observation>(mapToObservations(props.oracleResponse.input.obs));
+    const [observations, setObservations] = useState<Observation>(mapToObservations(props.oracleResponse.obs));
 
 
     return (
         <div>
             <p style={{ margin: 0, fontWeight: 'bold', color: '#007BFF' }}>Action: {props.oracleResponse.action}</p>
+            <p style={{ margin: 0, color: '#333' }}>Datetime: {props.oracleResponse.datetime}</p>
             <div style={{ fontFamily: 'Arial', padding: '1em' }}>
                 <h3>Observations:</h3>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
