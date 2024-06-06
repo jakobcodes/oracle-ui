@@ -4,6 +4,7 @@ import { OracleResponse } from "../types/OracleResponse";
 import ActionsHistoryRecord from "./ActionHistoryRecord";
 import Stats from "./Stats";
 import CustomFetch from "./CustomFetch";
+import Timeline from "./Timeline";
 
 const Actions: React.FC = () => {
   const [seeCustomFetch, setSeeCustomFetch] = useState<boolean>(false);
@@ -43,6 +44,9 @@ const Actions: React.FC = () => {
     >
       <div style={{ position: "absolute", left: "45vw", bottom: 0 }}>
         <Stats actionsHistory={actionsHistory} />
+      </div>
+      <div style={{ position: "absolute", left: "45vw", top: 0 }}>
+        <Timeline history={history} />
       </div>
       <button
         style={{
