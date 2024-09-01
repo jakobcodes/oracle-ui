@@ -4,7 +4,7 @@ import { OracleResponse } from "../types/OracleResponse";
 export const fetchAction = async (
   body: FetchActionRequestBody
 ): Promise<OracleResponse> => {
-  const response = await fetch("http://localhost:5000/oracle", {
+  const response = await fetch("http://localhost:8080/oracle", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export const fetchAction = async (
 };
 
 export const fetchHistory = async (): Promise<OracleResponse[]> => {
-  const response = await fetch("http://localhost:5000/get_actions_history", {
+  const response = await fetch("http://localhost:8080/history", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
