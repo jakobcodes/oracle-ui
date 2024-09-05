@@ -1,7 +1,7 @@
 import Actions from "./components/Actions";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "@/components/NavBar";
-import { SettingsPage } from "@/components/pages/SettingsPage";
+import UploadPolicyPage from "@/components/pages/UploadPolicyPage";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Actions />} />
         <Route path="/actions" element={<Actions />} />
-        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/policies" element={<UploadPolicyPage />} />
       </Routes>
     </>
   );

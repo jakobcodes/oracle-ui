@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Observation } from "../types/Observation";
-import { fetchAction, fetchHistory } from "../api/api";
+import { fetchAction, fetchActionsHistory } from "../api/api";
 import { OracleResponse } from "../types/OracleResponse";
 
 interface CustomFetchProps {
@@ -250,7 +250,7 @@ const CustomFetch: React.FC<CustomFetchProps> = ({
               fetchAction({ obs: Object.values(observation) })
                 .then((response) => {
                   setAction(response.action);
-                  fetchHistory().then((response) => {
+                  fetchActionsHistory().then((response) => {
                     setHistory(response);
                     let tmpHistory: number[] = [];
                     response.forEach((r) => {
