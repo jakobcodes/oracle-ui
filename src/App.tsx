@@ -1,8 +1,7 @@
 import Actions from "./components/Actions";
 
 function App() {
-
-  return <Actions/>;
+  return <Actions />;
 }
 
 export default App;

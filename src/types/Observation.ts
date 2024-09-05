@@ -9,4 +9,3 @@ export type Observation =  {
     waitingJobsRatioGlobalHistory: number;
     waitingJobsRatioRecentHistory: number;
 };
-
