@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { fetchAction, fetchHistory } from "../api/api";
-import { OracleResponse } from "../types/OracleResponse";
+import { fetchAction, fetchActionsHistory } from "@/api/api";
+import { OracleResponse } from "@/types/OracleResponse";
 import ActionsHistoryRecord from "./ActionHistoryRecord";
 import Stats from "./Stats";
 import CustomFetch from "./CustomFetch";
@@ -62,7 +62,7 @@ const Actions: React.FC = () => {
           fetchAction({ obs: generateRandomNumbers() })
             .then((response) => {
               setAction(response.action);
-              fetchHistory().then((response) => {
+              fetchActionsHistory().then((response) => {
                 setHistory(response);
                 let tmpHistory: number[] = [];
                 Object.entries(
@@ -92,7 +92,7 @@ const Actions: React.FC = () => {
           cursor: "pointer",
         }}
         onClick={() => {
-          fetchHistory()
+          fetchActionsHistory()
             .then((response) => {
               setHistory(response);
               let tmpHistory: number[] = [];
